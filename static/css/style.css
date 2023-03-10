@@ -1,0 +1,80 @@
+:root {
+    --button-color: #f0746a;
+    --paragraph-color: #fff;
+  }
+
+  #page {
+    background: url(images/emptybar.jpg) center/cover no-repeat fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .navbar {
+    background-color: transparent !important;
+  }
+
+  .custom-cursive {
+    font: bold 5vh cursive;
+    color: #f0746a;
+    text-shadow: 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+  }
+
+  p {
+    color: var(--paragraph-color);
+    font-weight: bolder;
+    font-size: larger;
+    font-family: sans-serif;
+    /* text-shadow: 1.5px 1.5px #fff, -1.5px -1.5px #fff, 1.5px -1.5px #fff,
+      -1.5px 1.5px #fff; */
+  }
+
+  .buttons>div {
+    display: flex;
+    justify-content: space-around;
+    /* margin-top: 10em; */
+  }
+
+  button {
+    font-size: 1.5em !important;
+    color: var(--button-color) !important;
+    border-color: var(--button-color);
+  }
+  a{
+    color: #f0746a;
+    font-size: bolder;
+  }
+
+  /* preloader styles */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #262626;
+  }
+
+  #loader {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #f0746a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }

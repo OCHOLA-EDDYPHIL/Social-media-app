@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Come and dunda!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+    <div id="page" class="container-fluid">
+      <nav class="navbar bg-body-tertiary object-fit-fill">
+        <div class="container-fluid text-center">
+          <span class="navbar-brand mb-0 h1 mx-auto text-danger custom-cursive">DUNDAING</span>
+        </div>
+      </nav>
+      <div class="carousel-registration position-absolute top-50 start-50 translate-middle text-center">
+        <div class="text">
+          <p>WELCOME TO DUNDAING, THE BEST PARTY APP AROUND</p>
+          <p>ARE YOU READY TO DUNDAAA</p>
+        </div>
+        <div class="d-flex justify-content-center m-auto buttons">
+          <div class="w-100 ">
+            <button type="button" class="btn btn-outline-warning">
+              <a href="signup" class="text-decoration-none">REGISTER</a>
+            </button>
+            <button type="button" class="btn btn-outline-warning">
+              <a href="login_view" class="text-decoration-none">LOGIN</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script>
+      var bgImages = [
+        "{% static 'images/girldancing.jpg' %}",
+        "{% static 'images/bright.jpg' %}",
+        "{% static 'images/emptybar.jpg' %},"
+      ];
+      var currentBgIndex = 0;
+      setInterval(function () {
+        currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+        document.getElementById("page").style.backgroundImage =
+          "url(" + bgImages[currentBgIndex] + ")";
+      }, 20000); // change background every 5 seconds
+
+      // setInterval(function () {
+      //   // generate a random color
+      //   var randomColor =
+      //     "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+      //   // set the paragraph color variable to the random color
+      //   document.documentElement.style.setProperty(
+      //     "--paragraph-color",
+      //     randomColor
+      //   );
+      // }, 5000); // change paragraph color every 3 seconds
+      // hide preloader when page is fully loaded
+      window.addEventListener("load", function () {
+        var preloader = document.getElementById("preloader");
+        setTimeout(function () {
+          preloader.style.display = "none";
+        }, 7000); // Hide the preloader after 5 seconds
+      });
+
+      </script>
+    </div>
+  </body>
+</html>

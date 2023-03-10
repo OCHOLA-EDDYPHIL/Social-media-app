@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Come and dunda!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+      body {
+        background-image: url("{% static 'images/girldancing.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .alert {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: rgb(38 38 38 / 80%);
+      }
+
+      .alert > .message {
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 20vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+    {% for message in messages %}
+    <div
+      class="alert alert-{{ message.tags }} d-flex align-items-center"
+      role="alert"
+    >
+      <div class="message">
+        <strong>{{ message }}</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    {% endfor %}
+    <div id="page" class="container-fluid">
+      <nav class="navbar bg-body-tertiary object-fit-fill">
+        <div class="container-fluid text-center">
+          <span class="navbar-brand mb-0 h1 mx-auto text-danger custom-cursive"
+            >DUNDAING</span
+          >
+        </div>
+      </nav>
+      <div
+        class="carousel-registration position-absolute top-50 start-50 translate-middle text-center"
+      >
+        <div class="text">
+          <p>WELCOME TO DUNDAING, THE BEST PARTY APP AROUND</p>
+          <p>ARE YOU READY TO DUNDAAA</p>
+        </div>
+        <div class="d-flex justify-content-center m-auto buttons">
+          <div class="w-100">
+            <button type="button" class="btn btn-outline-warning">
+              <a href="signup" class="text-decoration-none">REGISTER</a>
+            </button>
+            <button type="button" class="btn btn-outline-warning">
+              <a href="login_view" class="text-decoration-none">LOGIN</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script>
+        // hide preloader when page is fully loaded
+        window.addEventListener("load", function () {
+          var preloader = document.getElementById("preloader");
+          setTimeout(function () {
+            preloader.style.display = "none";
+          }, 2000); // Hide the preloader after 3 seconds
+        });
+      </script>
+    </div>
+  </body>
+</html>
