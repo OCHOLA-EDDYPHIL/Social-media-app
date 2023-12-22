@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<title>Title</title>
+</head>
+<body>
+    <style>
+        .notifications {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 9999;
+            background-color: rgba(19, 10, 10, 0.767);
+        }
+        .messageheading {
+            height: 5vh;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+        .messageheading>button{
+            font-size: 2em;
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            background: transparent;
+            border: #cb0d0d solid 1px;
+
+        }
+        .messagebox {
+            border: 5px solid;
+            padding: 15px;
+            width: 50vh;
+            background-color: rgba(43, 139, 139, 0.74);
+        }
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            color: #fff;
+            object-fit: contain;
+        }
+    </style>
+<div class="notifications">
+    <div class="messagebox">
+       <div class="messageheading">
+        <button class="closebutton">x</button>
+       </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veritatis nam officiis placeat ea quod quam doloribus hic iusto ullam earum voluptates at rem, ipsum optio itaque deleniti. Reiciendis, velit.</p>
+    </div>
+</div>
+<script>
+    // get a reference to the open button
+const openButton = document.getElementById('open-button');
+
+// get a reference to the close button
+const closeButton = document.getElementById('close-button');
+
+// get a reference to the notifications element
+const notifications = document.querySelector('.notifications');
+
+// define a function to show the notifications
+function showNotifications() {
+  notifications.style.display = 'block';
+}
+
+// define a function to hide the notifications
+function hideNotifications() {
+  notifications.style.display = 'none';
+}
+
+// add a click event listener to the open button
+openButton.addEventListener('click', showNotifications);
+
+// add a click event listener to the close button
+closeButton.addEventListener('click', hideNotifications);
+
+// set a timeout to hide the notifications after 5 seconds
+setTimeout(hideNotifications, 10000);
+
+</script>
+</body>
+</html>
